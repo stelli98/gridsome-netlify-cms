@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div id="appContainer">
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
@@ -9,7 +9,7 @@
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -22,16 +22,19 @@ query {
 </static-query>
 
 <style>
+html,
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  width: 100vw;
 }
 
-.layout {
-  max-width: 760px;
+#appContainer {
+  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
