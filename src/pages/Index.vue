@@ -11,14 +11,11 @@
               v-for="edge in $static.allMovie.edges"
               :key="edge.node.id"
             >
-              <!-- <g-image
-      class="poster"
-      alt="{{
-      edge.node.title
-      }}"
-      :src="edge.node.poster"
-      style="max-width: 25%"
-      /> -->
+              <g-image
+              class="poster"
+              :src="edge.node.poster"
+              style="width: 100%"
+              />
               <div class="movieCard__content">
                 <ul class="movieCard__details">
                   <li class="movieCard__details-item">{{ edge.node.genre }}</li>
@@ -31,9 +28,9 @@
                 </ul>
                 <div class="movieCard__cta">
                   <button class="btn btn-more">
-                    <g-link :to="edge.node.path">+ d'infos</g-link>
+                    <g-link :to="edge.node.path"><i class="fas fa-plus-circle"></i></g-link>
                   </button>
-                  <button class="btn btn-play">BA</button>
+                  <button class="btn btn-play"><i class="far fa-play-circle"></i></button>
                   <button
                     class=" snipcart-add-item btn btn-buy"
                     :data-item-id="edge.node.id"
@@ -58,7 +55,7 @@
 
       <!-- Aside -->
       <aside id="aside">
-        <h2>aside will be nice</h2>
+        <Sidebar />
       </aside>
     </div>
   </Layout>
@@ -88,18 +85,20 @@
 
 <script>
 import Header from "@/components/Header.vue";
+import Sidebar from "@/components/Sidebar.vue";
 export default {
   metaInfo: {
     title: "LeKino",
     meta: [
       { charset: "utf-8" },
       { name: "description", content: "Un cinéma à taille humaine" },
-      { name: "keywords", content: "Films, festivals, rencontres" },
-    ],
+      { name: "keywords", content: "Films, festivals, rencontres" }
+    ]
   },
   components: {
     Header,
-  },
+    Sidebar
+  }
 };
 </script>
 
@@ -131,6 +130,7 @@ export default {
   max-width: 400px;
   min-width: 200px;
   padding: 1rem;
+  display: none;
 }
 
 // movieCard
@@ -176,6 +176,10 @@ export default {
   }
 }
 
+i {
+  font-size: 1.5rem;
+}
+
 .btn-more {
   background-color: #ecc94b;
 }
@@ -185,5 +189,13 @@ export default {
 
 .btn-buy {
   background-color: #e53e3e;
+}
+
+// Media queries
+
+@media (min-width: 779px) {
+  #aside {
+    display: block;
+  }
 }
 </style>

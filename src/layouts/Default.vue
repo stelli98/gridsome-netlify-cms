@@ -1,14 +1,14 @@
 <template>
   <div id="appContainer">
-    <header class="header">
+    <nav class="topNav">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/blog">LeBlog</g-link>
+        <g-link class="nav__link" to="/blog">Lelog</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
-    </header>
+    </nav>
     <slot />
   </div>
 </template>
@@ -21,26 +21,26 @@ query {
 }
 </static-query>
 
-<style>
-html,
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  width: 100vw;
-}
+<script>
+export default {
+  components: {}
+};
+</script>
 
+<style lang="scss" scoped>
 #appContainer {
+  display: grid;
+  place-items: center;
+  margin: 2rem 0;
   width: 90%;
   max-width: 1440px;
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: turquoise;
 }
 
-.header {
+.topNav {
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;

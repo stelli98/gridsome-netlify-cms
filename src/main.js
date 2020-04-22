@@ -2,7 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from "~/layouts/Default.vue";
-import "~/assets/scss/main.scss";
+
 
 export default function (Vue, {
   router,
@@ -30,7 +30,8 @@ export default function (Vue, {
   );
   head.script.push({
       type: 'text/javascript',
-      src: 'https://kit.fontawesome.com/FONT_AWESOME_KIT_CODE.js" crossorigin="anonymous',
+      src: 'https://kit.fontawesome.com/72fc7bdc63.js',
+      crossorigin: "anonymous",
       body: true,
     }, {
       type: 'text/javascript',

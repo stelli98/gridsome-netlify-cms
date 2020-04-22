@@ -5,11 +5,11 @@
       <div class="wrapper">
         <div class="main">
           <div class="top">
-            <img
+            <g-image
               class="poster"
-              :poster="$page.movie.poster"
-              style="max-width: 25%"
-            />
+              :src="$page.movie.poster"
+              style="width: 100%"
+              />
             <div class="info">
               <h2 class="movieTitle">{{ $page.movie.title }}</h2>
               <h4 class="director">
@@ -31,7 +31,7 @@
           </div>
         </div>
         <!-- End of Main -->
-        <aside class="aside">
+        <aside id="aside">
           aside will be there
         </aside>
         <!-- End of Aside -->
@@ -81,7 +81,6 @@ export default {};
 
 .top {
   background-color: coral;
-  display: flex;
   .poster {
     background-color: ghostwhite;
     min-width: 33%;
@@ -116,11 +115,25 @@ export default {};
   }
 }
 
-.aside {
+#aside {
   background-color: blue;
   width: 33%;
   max-width: 400px;
   min-width: 200px;
   padding: 1rem;
+}
+
+// Media queries
+
+@media (min-width: 779px) {
+  #aside {
+    display: block;
+  }
+  .top {
+    display: flex;
+    .poster {
+      max-width: 33%;
+    }
+  }
 }
 </style>
