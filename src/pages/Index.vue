@@ -1,7 +1,6 @@
 <template>
   <Layout>
-    <h1>LeKino</h1>
-    <h2>Awesome catchphrase!</h2>
+    <Header />
     <div class="container">
       <main id="main">
         <section id="now" class="movieCards">
@@ -88,6 +87,7 @@
 </static-query>
 
 <script>
+import Header from "@/components/Header.vue";
 export default {
   metaInfo: {
     title: "LeKino",
@@ -97,7 +97,9 @@ export default {
       { name: "keywords", content: "Films, festivals, rencontres" },
     ],
   },
-  components: {},
+  components: {
+    Header,
+  },
 };
 </script>
 
