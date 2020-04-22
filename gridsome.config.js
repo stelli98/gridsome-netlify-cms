@@ -26,10 +26,17 @@ module.exports = {
       options: {
         typeName: "Movie",
         path: "./content/movies/**/*.md",
+        remark: {
+          plugins: [
+            ['@noxify/gridsome-plugin-remark-embed', {
+              'enabledProviders': ['Youtube'],
+            }]
+          ]
+        }
       },
     },
     {
-      use: `gridsome-plugin-netlify-cms`,
+      use: `gridsome-plugin-netlify-cms`
     },
   ],
   templates: {

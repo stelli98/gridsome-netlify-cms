@@ -5,26 +5,40 @@
       <div class="wrapper">
         <div class="main">
           <div class="top">
-            <g-image
-              class="poster"
-              :src="$page.movie.poster"
-              style="width: 100%"
-              />
+            <div class="posterContainer">
+              <g-image class="poster" :src="$page.movie.poster" />
+            </div>
+
             <div class="info">
               <h2 class="movieTitle">{{ $page.movie.title }}</h2>
-              <h4 class="director">
-                <strong>un film de: </strong>{{ $page.movie.director }}
-              </h4>
               <div class="details">
                 <p>{{ $page.movie.genre }}</p>
                 <p>{{ $page.movie.duration }}</p>
                 <p>{{ $page.movie.public }}</p>
                 <p>{{ $page.movie.releaseDate }}</p>
               </div>
+              <h4 class="director">
+                <strong>un film de: </strong>{{ $page.movie.director }}
+              </h4>
+              <h4 class="director">
+                <strong>Avec: </strong>{{ $page.movie.director }}
+              </h4>
+
+              <div class="excerpt">{{ $page.movie.excerpt }}</div>
             </div>
           </div>
           <div class="bottom">
-            <div class="excerpt">{{ $page.movie.excerpt }}</div>
+            <div style="width: 100%; margin: 0 auto;">
+              <div
+                style="position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0;"
+              >
+                <iframe
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  :src="$page.movie.trailer"
+                ></iframe>
+              </div>
+            </div>
+
             <div class="timetable">
               timetable
             </div>
@@ -74,16 +88,16 @@ export default {};
 }
 
 .main {
-  background-color: pink;
   width: 100%;
   padding: 1rem;
 }
 
 .top {
-  background-color: coral;
-  .poster {
-    background-color: ghostwhite;
-    min-width: 33%;
+  .posterContainer {
+    max-width: 100vw;
+    .poster {
+      width: 100%;
+    }
   }
 
   .info {
@@ -92,6 +106,7 @@ export default {};
     justify-content: center;
     align-self: center;
     width: 100%;
+    padding: 0 2em;
 
     .movieTitle {
       text-align: center;
@@ -116,23 +131,42 @@ export default {};
 }
 
 #aside {
-  background-color: blue;
-  width: 33%;
-  max-width: 400px;
-  min-width: 200px;
-  padding: 1rem;
+  display: none;
 }
 
 // Media queries
-
-@media (min-width: 779px) {
+@media (min-width: 648px) {
   #aside {
     display: block;
+    background-color: blue;
+    width: 33%;
+    max-width: 400px;
+    min-width: 250px;
+    padding: 1rem;
   }
+}
+
+@media (min-width: 992px) {
   .top {
     display: flex;
-    .poster {
+    justify-content: center;
+    .posterContainer {
+      max-width: 45%;
+      .poster {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 1240px) {
+  .top {
+    display: flex;
+    justify-content: center;
+    .posterContainer {
       max-width: 33%;
+      .poster {
+        width: 100%;
+      }
     }
   }
 }
