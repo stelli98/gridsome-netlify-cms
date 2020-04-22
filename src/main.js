@@ -24,7 +24,7 @@ export default function (Vue, {
       href: 'https://unpkg.com/sanitize.css/typography.css'
     }, {
       rel: 'stylesheet',
-      href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+      href: 'https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css'
     }
 
   );
@@ -38,7 +38,7 @@ export default function (Vue, {
       body: true,
     }, {
       type: 'text/javascript',
-      src: 'https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css',
+      src: 'https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.js',
       body: false,
       id: 'snipcart',
       'data-api-key': 'MjRhZjNmMzEtOWRmYi00YWEyLTk5OGYtZjgzZDE4YzUxYjIzNjM3MTYzMTMxNjMzNTQ0OTk4',

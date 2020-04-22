@@ -6,7 +6,6 @@
       <main id="main">
         <section id="now" class="movieCards">
           <h2 class="section__title">À l'affiche</h2>
-          <MovieCard />
           <div class="movieCards__list">
             <article
               class="movieCard"
@@ -89,19 +88,16 @@
 </static-query>
 
 <script>
-import MovieCard from "@/components/MovieCard.vue";
 export default {
   metaInfo: {
     title: "LeKino",
     meta: [
       { charset: "utf-8" },
       { name: "description", content: "Un cinéma à taille humaine" },
-      { name: "keywords", content: "Films, festivals, rencontres" }
-    ]
+      { name: "keywords", content: "Films, festivals, rencontres" },
+    ],
   },
-  components: {
-    MovieCard
-  }
+  components: {},
 };
 </script>
 
