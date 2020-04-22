@@ -36,7 +36,17 @@
                     <g-link :to="edge.node.path">+ d'infos</g-link>
                   </button>
                   <button class="btn btn-play">BA</button>
-                  <button class="btn btn-buy">Résa</button>
+                  <button
+                    class=" snipcart-add-item btn btn-buy"
+                    :data-item-id="edge.node.id"
+                    :data-item-price="7.5"
+                    data-item-url="/"
+                    :data-item-description="edge.node.excerpt"
+                    :data-item-image="edge.node.poster"
+                    :data-item-name="edge.node.title"
+                  >
+                    Résa
+                  </button>
                 </div>
               </div>
             </article>
@@ -86,12 +96,12 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "description", content: "Un cinéma à taille humaine" },
-      { name: "keywords", content: "Films, festivals, rencontres" },
-    ],
+      { name: "keywords", content: "Films, festivals, rencontres" }
+    ]
   },
   components: {
-    MovieCard,
-  },
+    MovieCard
+  }
 };
 </script>
 

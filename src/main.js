@@ -22,13 +22,27 @@ export default function (Vue, {
     }, {
       rel: 'stylesheet',
       href: 'https://unpkg.com/sanitize.css/typography.css'
+    }, {
+      rel: 'stylesheet',
+      href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
     }
 
   );
   head.script.push({
-    type: 'text/javascript',
-    src: 'https://kit.fontawesome.com/FONT_AWESOME_KIT_CODE.js" crossorigin="anonymous',
-    body: true,
-  });
-  Vue.component("Layout", DefaultLayout);
+      type: 'text/javascript',
+      src: 'https://kit.fontawesome.com/FONT_AWESOME_KIT_CODE.js" crossorigin="anonymous',
+      body: true,
+    }, {
+      type: 'text/javascript',
+      src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
+      body: true,
+    }, {
+      type: 'text/javascript',
+      src: 'https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css',
+      body: false,
+      id: 'snipcart',
+      'data-api-key': 'MjRhZjNmMzEtOWRmYi00YWEyLTk5OGYtZjgzZDE4YzUxYjIzNjM3MTYzMTMxNjMzNTQ0OTk4',
+    },
+    Vue.component("Layout", DefaultLayout)
+  )
 }

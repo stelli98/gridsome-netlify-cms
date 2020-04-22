@@ -13,8 +13,10 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: "LeKino",
-  siteDescription: "Le programme du cinéma Kino, ses places en ligne et son blog",
-  plugins: [{
+  siteDescription:
+    "Le programme du cinéma Kino, ses places en ligne et son blog",
+  plugins: [
+    {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Post",
@@ -27,12 +29,14 @@ module.exports = {
         typeName: "Movie",
         path: "./content/movies/**/*.md",
       },
-    }
+    },
+    {
+      use: `gridsome-plugin-netlify-cms`,
+    },
   ],
   templates: {
     Post: "/blog/:year/:month/:day/:title",
-    Post: "/movies/:title",
-
+    Movie: "/movies/:title",
   },
   chainWebpack(config) {
     // Load variables for all vue-files
