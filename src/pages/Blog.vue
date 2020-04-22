@@ -3,7 +3,7 @@
     <h2>Le Blog</h2>
     <article
       class="postCard"
-      v-for="edge in $page.allPost.edges"
+      v-for="edge in $static.allPost.edges"
       :key="edge.node.id"
     >
       <g-image
@@ -21,13 +21,13 @@
           Publié le {{ edge.node.date }} - {{ edge.node.timeToRead }}mn de
           lecture
         </p>
-        
+
         <g-link :to="edge.node.path">Lire</g-link>
       </div>
     </article>
   </layout>
 </template>
-<page-query>
+<static-query>
 query
 {
   allPost {
@@ -45,7 +45,7 @@ query
     }
   }
 }
-</page-query>
+</static-query>
 <script>
 export default {};
 </script>

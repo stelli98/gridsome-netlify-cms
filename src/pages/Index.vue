@@ -4,74 +4,41 @@
     <h2>Awesome catchphrase!</h2>
     <div class="container">
       <main id="main">
-        <section id="now" class="section">
+        <section id="now" class="movieCards">
           <h2 class="section__title">À l'affiche</h2>
-          <article class="movieCards">
-            <ul class="movieCards__list">
-              <li class="movieCards__list-item">
-                <article class="movieCard">
-                  <img
-                    src="https://media.senscritique.com/media/000018573383/source_big/Parasite.jpg"
-                    alt="movie title"
-                    class="movieCard__poster"
-                  />
-                  <div class="movieCard__content">
-                    <ul class="movieCard__details">
-                      <li class="movieCard__details-item">-12</li>
-                      <li class="movieCard__details-item">2h49</li>
-                      <li class="movieCard__details-item">Comedy, Drama</li>
-                    </ul>
-                    <div class="movieCard__cta">
-                      <button class="btn btn-more">+ d'infos</button>
-                      <button class="btn btn-play">BA</button>
-                      <button class="btn btn-buy">Résa</button>
-                    </div>
-                  </div>
-                </article>
-              </li>
-              <li class="movieCards__list-item">
-                <article class="movieCard">
-                  <img
-                    src="https://media.senscritique.com/media/000018573383/source_big/Parasite.jpg"
-                    alt="movie title"
-                    class="movieCard__poster"
-                  />
-                  <div class="movieCard__content">
-                    <ul class="movieCard__details">
-                      <li class="movieCard__details-item">-12</li>
-                      <li class="movieCard__details-item">2h49</li>
-                      <li class="movieCard__details-item">Comedy, Drama</li>
-                    </ul>
-                    <div class="movieCard__cta">
-                      <button class="btn btn-more">+ d'infos</button>
-                      <button class="btn btn-play">BA</button>
-                      <button class="btn btn-buy">Résa</button>
-                    </div>
-                  </div>
-                </article>
-              </li>
-              <li class="movieCards__list-item">
-                <article class="movieCard">
-                  <img
-                    src="https://media.senscritique.com/media/000018573383/source_big/Parasite.jpg"
-                    alt="movie title"
-                    class="movieCard__poster"
-                  />
-                  <div class="movieCard__content">
-                    <ul class="movieCard__details">
-                      <li class="movieCard__details-item">-12</li>
-                      <li class="movieCard__details-item">2h49</li>
-                      <li class="movieCard__details-item">Comedy, Drama</li>
-                    </ul>
-                    <div class="movieCard__cta">
-                      <button class="btn btn-more">+ d'infos</button>
-                      <button class="btn btn-play">BA</button>
-                      <button class="btn btn-buy">Résa</button>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            </ul>
+          <article
+            class="movieCards__list"
+            v-for="edge in $static.allMovie.edges"
+            :key="edge.node.id"
+          >
+            <article class="movieCard">
+              <!-- <g-image
+                class="poster"
+                alt="{{
+                edge.node.title
+                }}"
+                :src="edge.node.poster"
+                style="max-width: 25%"
+              /> -->
+              <div class="movieCard__content">
+                <ul class="movieCard__details">
+                  <li class="movieCard__details-item">{{ edge.node.genre }}</li>
+                  <li class="movieCard__details-item">
+                    {{ edge.node.duration }}
+                  </li>
+                  <li class="movieCard__details-item">
+                    {{ edge.node.public }}
+                  </li>
+                </ul>
+                <div class="movieCard__cta">
+                  <button class="btn btn-more">
+                    <g-link :to="edge.node.path">+ d'infos</g-link>
+                  </button>
+                  <button class="btn btn-play">BA</button>
+                  <button class="btn btn-buy">Résa</button>
+                </div>
+              </div>
+            </article>
           </article>
         </section>
         <section class="soon">
@@ -87,6 +54,28 @@
     </div>
   </Layout>
 </template>
+<static-query>
+  {
+    allMovie{
+    edges{
+      node{
+        id
+        path
+        title
+        director
+        actors
+        poster
+        trailer
+        excerpt
+        genre
+        date(format: "Do MMMM, YYYY")
+        duration
+        public
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 export default {

@@ -13,19 +13,26 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: "LeKino",
-  siteDescription:
-    "Le programme du cinéma Kino, ses places en ligne et son blog",
-  plugins: [
-    {
+  siteDescription: "Le programme du cinéma Kino, ses places en ligne et son blog",
+  plugins: [{
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Post",
         path: "./content/blog/**/*.md",
       },
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Movie",
+        path: "./content/movies/**/*.md",
+      },
+    }
   ],
   templates: {
     Post: "/blog/:year/:month/:day/:title",
+    Post: "/movies/:title",
+
   },
   chainWebpack(config) {
     // Load variables for all vue-files
