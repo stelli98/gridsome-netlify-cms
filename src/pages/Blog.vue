@@ -17,10 +17,6 @@
           {{ edge.node.title }}
         </h2>
         <p class="excerpt">{{ edge.node.excerpt }}</p>
-        <p class="date">
-          Publié le {{ edge.node.date }} - {{ edge.node.timeToRead }}mn de
-          lecture
-        </p>
 
         <g-link :to="edge.node.path">Lire</g-link>
       </div>

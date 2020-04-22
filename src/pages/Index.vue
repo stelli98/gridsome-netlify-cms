@@ -6,20 +6,21 @@
       <main id="main">
         <section id="now" class="movieCards">
           <h2 class="section__title">À l'affiche</h2>
-          <article
-            class="movieCards__list"
-            v-for="edge in $static.allMovie.edges"
-            :key="edge.node.id"
-          >
-            <article class="movieCard">
+          <MovieCard />
+          <div class="movieCards__list">
+            <article
+              class="movieCard"
+              v-for="edge in $static.allMovie.edges"
+              :key="edge.node.id"
+            >
               <!-- <g-image
-                class="poster"
-                alt="{{
-                edge.node.title
-                }}"
-                :src="edge.node.poster"
-                style="max-width: 25%"
-              /> -->
+      class="poster"
+      alt="{{
+      edge.node.title
+      }}"
+      :src="edge.node.poster"
+      style="max-width: 25%"
+      /> -->
               <div class="movieCard__content">
                 <ul class="movieCard__details">
                   <li class="movieCard__details-item">{{ edge.node.genre }}</li>
@@ -39,7 +40,7 @@
                 </div>
               </div>
             </article>
-          </article>
+          </div>
         </section>
         <section class="soon">
           <h2 class="sectionTitle">Prochainement</h2>
@@ -78,6 +79,7 @@
 </static-query>
 
 <script>
+import MovieCard from "@/components/MovieCard.vue";
 export default {
   metaInfo: {
     title: "LeKino",
@@ -86,6 +88,9 @@ export default {
       { name: "description", content: "Un cinéma à taille humaine" },
       { name: "keywords", content: "Films, festivals, rencontres" },
     ],
+  },
+  components: {
+    MovieCard,
   },
 };
 </script>
@@ -103,6 +108,7 @@ export default {
 #main {
   background-color: pink;
   width: 100%;
+  padding: 1rem;
 }
 
 .movieCards__list {
@@ -110,6 +116,16 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
   grid-gap: 1.5em;
 }
+
+#aside {
+  background-color: blue;
+  width: 33%;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 1rem;
+}
+
+// movieCard
 
 .movieCard {
   max-width: 15em;
@@ -161,12 +177,5 @@ export default {
 
 .btn-buy {
   background-color: #e53e3e;
-}
-
-#aside {
-  background-color: blue;
-  width: 33%;
-  max-width: 400px;
-  min-width: 200px;
 }
 </style>

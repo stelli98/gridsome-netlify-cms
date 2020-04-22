@@ -2,7 +2,7 @@
 genre: "Drame, Historique"
 public: "Tous"
 director: "Céline Sciamma"
-poster: "/img/portrait_de_la_jeune_fille_en_feu.jpg"
+poster: "https://media.senscritique.com/media/000018630923/source_big/Portrait_de_la_jeune_fille_en_feu.jpg"
 ReleaseDate: 2019-09-15
 trailer: "https://youtu.be/NGArtOaOu0o"
 duration: "1h59"
