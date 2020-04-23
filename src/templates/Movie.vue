@@ -27,6 +27,20 @@
                   <strong>Sortie en salle: </strong>{{ $page.movie.date }}
                 </p>
               </div>
+              <tabs>
+                <tab name="Synopsis" selected="true">
+                <div class="excerpt">
+                  <h3>Le synopsis</h3>
+                  {{ $page.movie.excerpt }}
+                </div>
+              </tab>
+              <tab name="Horaires">
+                <div class="timetable">
+                  <h3>Les séances</h3>
+                  
+                </div>
+              </tab>
+              </tabs>
             </div>
           </div>
           <div class="bottom">
@@ -70,6 +84,17 @@ query ($path :String!) {
   }
 }
 </page-query>
+<script>
+import Tab from "@/components/Tab.vue";
+import Tabs from "@/components/Tabs.vue";
+
+export default {
+  components: {
+    Tab,
+    Tabs
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .banner {
