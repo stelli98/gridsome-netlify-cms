@@ -52,17 +52,17 @@ ul {
   padding: 0;
 
   li {
-    margin-right: 2.5em;
+    margin-right: 2em;
   }
 }
 
 .nav-item {
   cursor: pointer;
   &:hover {
-    color: mediumorchid;
+    background-color: rgb(250, 164, 250);
   }
   &.is-active {
-    background-color: mediumorchid;
+    background-color: rgb(250, 164, 250);
     padding: 0 0.5em;
   }
 }

@@ -1,5 +1,5 @@
 ---
-genre: "Drame, Historique"
+genre: "Drame, Histoire"
 public: "Tous"
 director: "Céline Sciamma"
 poster: /uploads/portrait_de_la_jeune_fille_en_feu.jpg
