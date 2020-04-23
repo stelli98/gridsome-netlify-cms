@@ -3,7 +3,7 @@ genre: "Comedie, Drame"
 public: "Tous"
 director: "Bong Joon-Ho"
 poster: /uploads/parasite.jpg
-date: 2020-06-03
+date: "2020-06-03"
 trailer: "https://youtu.be/3LYiLq4EHjA"
 duration: "2h12"
 title: "Parasite"

@@ -44,4 +44,3 @@ collections:
       - { label: "Poster", name: "poster", widget: "image" }
       - { label: "Banner", name: "banner", widget: "image" }
       - { label: "Trailer", name: "trailer", widget: "string" }
-© 2020 GitHub, Inc.

@@ -12,19 +12,21 @@
             <div class="info">
               <h2 class="movieTitle">{{ $page.movie.title }}</h2>
               <div class="details">
-                <p>{{ $page.movie.genre }}</p>
-                <p>{{ $page.movie.duration }}</p>
-                <p>{{ $page.movie.public }}</p>
-                <p>{{ $page.movie.releaseDate }}</p>
+                <p class="details__detail">{{ $page.movie.genre }}</p>
+                <p class="details__detail">{{ $page.movie.duration }}</p>
+                <p class="details__detail">{{ $page.movie.public }}</p>
               </div>
-              <h4 class="director">
-                <strong>un film de: </strong>{{ $page.movie.director }}
-              </h4>
-              <h4 class="director">
-                <strong>Avec: </strong>{{ $page.movie.director }}
-              </h4>
-
-              <div class="excerpt">{{ $page.movie.excerpt }}</div>
+              <div class="crew">
+                <p class="director">
+                  <strong>un film de: </strong>{{ $page.movie.director }}
+                </p>
+                <p class="actors">
+                  <strong>Avec: </strong>{{ $page.movie.actors }}
+                </p>
+                <p class="releaseDate">
+                  <strong>Sortie en salle: </strong>{{ $page.movie.date }}
+                </p>
+              </div>
             </div>
           </div>
           <div class="bottom">
@@ -37,10 +39,6 @@
                   :src="$page.movie.trailer"
                 ></iframe>
               </div>
-            </div>
-
-            <div class="timetable">
-              timetable
             </div>
           </div>
         </div>
@@ -73,10 +71,6 @@ query ($path :String!) {
 }
 </page-query>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .banner {
   background-color: aqua;
@@ -85,6 +79,7 @@ export default {};
 .wrapper {
   display: flex;
   justify-content: space-around;
+  padding: 1em;
 }
 
 .main {
@@ -93,10 +88,12 @@ export default {};
 }
 
 .top {
+  padding-bottom: 5%;
   .posterContainer {
     max-width: 100vw;
     .poster {
       width: 100%;
+      border-radius: 25px;
     }
   }
 
@@ -106,17 +103,22 @@ export default {};
     justify-content: center;
     align-self: center;
     width: 100%;
-    padding: 0 2em;
 
     .movieTitle {
       text-align: center;
     }
   }
   .details {
-    background-color: grey;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    &__detail {
+      font-size: 0.75rem;
+      border-radius: 50px;
+      background-color: #ff8066;
+      padding: 0.75em;
+    }
   }
 }
 .bottom {
@@ -136,6 +138,10 @@ export default {};
 
 // Media queries
 @media (min-width: 648px) {
+  .info {
+    padding-left: 0 1em;
+  }
+
   #aside {
     display: block;
     background-color: blue;

@@ -3,7 +3,7 @@ genre: "Drame, Historique"
 public: "Tous"
 director: "Céline Sciamma"
 poster: /uploads/portrait_de_la_jeune_fille_en_feu.jpg
-ReleaseDate: 2019-09-15
+ReleaseDate: "2019-09-15"
 trailer: "https://youtu.be/NGArtOaOu0o"
 duration: "1h59"
 title: "Portrait de la jeune fille en feu"
