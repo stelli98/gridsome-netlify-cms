@@ -1,0 +1,35 @@
+// Colors variables
+
+/*----- Base -----*/
+$color-dark: #4B4453;
+$color-mauve: #845EC2;
+$color-froly: #B0A8B9;
+$color-gray: #e2e2e2;
+$color-lightgray: #efefef;
+$color-almostred: #C34A36;
+$color-coral: #FF8066;
+$color-white: #fcfcfc;
+$color-green: #49f349;
+$color-red: $color-almostred;
+
+/*----- Palette -----*/
+$color-primary: $color-mauve;
+$color-secondary: $color-almostred;
+$color-accent: $color-coral;
+
+/*----- Background -----*/
+$color-bg-alt: $color-lightgray;
+$color-bg: $color-dark;
+
+/*----- Buttons -----*/
+
+// regular
+$color-button-bg: $color-primary;
+$color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-text: $color-white;
+
+// alt
+$color-buttonAlt-bg: transparent;
+$color-buttonAlt-bg-hover: rgba(255, 255, 255, 0.25);
+$color-buttonAlt-text: $color-dark;
+$color-buttonAlt-border: $color-dark;

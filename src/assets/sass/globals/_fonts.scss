@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Raleway&display=swap');
+
+$system-default-font-family: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Helvetica,
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+
+$heading-font-family: 'Poppins',
+sans-serif,
+$system-default-font-family;
+$heading-font-weight: 700;
+$subheading-font-weight: 500;
+
+$base-font-family: "Raleway",
+$system-default-font-family;
+$content-font-weight: 400;

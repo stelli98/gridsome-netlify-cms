@@ -1,0 +1,13 @@
+/*----- Colors-----*/
+
+$text-header: #333; // Header text color
+$text-light: #717584; // Light text color
+$color-text-alt: $color-mauve;
+$color-text: $color-froly; // Base text color
+$color-text-primary: $color-primary;
+$color-text-secondary: $color-secondary;
+
+/*----- Links -----*/
+
+$color-link-text: $color-text;
+$color-link-text-hover: darken($color-link-text, 8%);
