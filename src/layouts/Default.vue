@@ -1,15 +1,7 @@
 <template>
-  <div id="appContainer">
-    <nav class="topNav">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/blog">Lelog</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </nav>
-    <slot />
+  <div class="layout ">
+    <TopNav/>
+    <slot/>
   </div>
 </template>
 
@@ -22,32 +14,27 @@ query {
 </static-query>
 
 <script>
+import TopNav from "@/components/TopNav";
 export default {
-  components: {}
+  components: {
+    TopNav
+  }
 };
 </script>
 
-<style lang="scss" scoped>
-#appContainer {
-  display: grid;
-  place-items: center;
-  margin: 2rem 0;
-  width: 90%;
-  max-width: 1440px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: turquoise;
-}
 
-.topNav {
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+<style>
+body {
+  background-color: #1a202c;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
 }
-
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 .nav__link {
   margin-left: 20px;
 }

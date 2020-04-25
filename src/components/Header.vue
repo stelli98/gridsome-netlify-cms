@@ -8,8 +8,7 @@
         </div>
         <p class="pitch">
           The reason why you should use this site: Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Expedita, quaerat. <br />
-          <span>Magic!</span>
+          consectetur adipisicing elit.<span>Magic!</span> <br />
         </p>
       </div>
     </header>
@@ -20,7 +19,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 
