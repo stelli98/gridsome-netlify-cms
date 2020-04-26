@@ -1,6 +1,5 @@
 <template>
   <div class="layout ">
-    <TopNav/>
     <slot/>
   </div>
 </template>
@@ -14,11 +13,8 @@ query {
 </static-query>
 
 <script>
-import TopNav from "@/components/TopNav";
 export default {
-  components: {
-    TopNav
-  }
+  components: {}
 };
 </script>
 

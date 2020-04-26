@@ -8,7 +8,11 @@
 <script>
 export default {
   metaInfo: {
-    title: 'About us'
-  }
-}
+    title: "About us"
+  },
+  components: {}
+};
 </script>
+
+<style lang="scss" scoped>
+</style>
