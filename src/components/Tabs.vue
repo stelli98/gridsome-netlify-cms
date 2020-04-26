@@ -57,6 +57,8 @@ ul {
 }
 
 .nav-item {
+  font-size: 1.5rem;
+  font-weight: 500;
   cursor: pointer;
   &:hover {
     background-color: rgb(250, 164, 250);

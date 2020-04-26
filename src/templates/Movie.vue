@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <layout>
     <g-link class="nav__link" to="/">Retour</g-link>
     <div class="container">
       <div class="wrapper">
@@ -27,17 +27,18 @@
                   <strong>Sortie en salle: </strong>{{ $page.movie.date }}
                 </p>
               </div>
-              <tabs>
-                <tab name="Synopsis" selected="true">
-                  <div class="excerpt">
-                    <h3>Le synopsis</h3>
-                    {{ $page.movie.excerpt }}
-                  </div>
-                </tab>
-              </tabs>
             </div>
           </div>
           <div class="bottom">
+            <tabs>
+              <tab name="Synopsis" selected="true">
+                <div class="excerpt">
+                  <h3 class="tabTitle">Le synopsis</h3>
+                  {{ $page.movie.excerpt }}
+                </div>
+              </tab>
+              <Timetable />
+            </tabs>
             <div style="width: 100%; margin: 0 auto;">
               <div
                 style="position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0;"
@@ -51,13 +52,9 @@
           </div>
         </div>
         <!-- End of Main -->
-        <aside id="aside">
-          aside will be there
-        </aside>
-        <!-- End of Aside -->
       </div>
     </div>
-  </div>
+  </layout>
 </template>
 <page-query>
 query ($path :String!) {
@@ -93,33 +90,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.banner {
-  background-color: aqua;
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 p {
   margin: 0;
   padding: 0.5em;
 }
+
+.nav__link {
+  padding: 1em;
+}
 .wrapper {
   display: flex;
   justify-content: space-around;
-  padding: 1em;
+  padding: 1em 0.5em;
   font-size: 0.85rem;
 }
 
 .main {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .top {
   padding-bottom: 5%;
   .posterContainer {
-    max-width: 100vw;
     .poster {
       width: 100%;
-      border-radius: 25px;
+      border-radius: 10px;
     }
   }
 
@@ -127,11 +132,11 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: center;
     width: 100%;
 
     .movieTitle {
       text-align: center;
+      margin-bottom: 1em;
     }
   }
   .details {
@@ -143,14 +148,19 @@ p {
     &__detail {
       font-size: 0.75rem;
       border-radius: 10px;
-      background-color: #ff8066;
-      padding: 0.75em;
+      background-color: #fcb0a1;
+      padding: 0.5em;
     }
   }
 }
 
-#aside {
-  display: none;
+.tabTitle {
+  font-size: 1.25;
+  font-weight: 500;
+}
+
+.excerpt {
+  padding: 1em 0 2em 0;
 }
 
 // Media queries
@@ -158,17 +168,6 @@ p {
   .info {
     padding-left: 0 1em;
   }
-
-  #aside {
-    display: block;
-    background-color: blue;
-    width: 33%;
-    max-width: 400px;
-    min-width: 250px;
-  }
-}
-
-@media (min-width: 992px) {
   .top {
     display: flex;
     justify-content: center;
@@ -181,6 +180,8 @@ p {
   }
 }
 
+@media (min-width: 992px) {
+}
 @media (min-width: 1240px) {
   .top {
     display: flex;

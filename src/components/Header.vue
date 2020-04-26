@@ -6,10 +6,6 @@
           <h1 class="page-title"><span class="yellow">Le</span>Kino</h1>
           <h3 class="catchphrase">Films et séries sur grand écran</h3>
         </div>
-        <p class="pitch">
-          The reason why you should use this site: Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit.<span>Magic!</span> <br />
-        </p>
       </div>
     </header>
     <!--End of Header-->
@@ -26,15 +22,15 @@ export default {
 <style lang="scss">
 #header {
   width: 100%;
-  height: 50vh;
+  height: 33vh;
   display: grid;
   place-items: center;
-  margin: 2rem 0;
+  margin: 2em 0 1em 0;
 
   .brand {
     display: grid;
     place-items: center;
-    padding: 2em 0;
+    padding-bottom: 2em;
     width: 100%;
 
     .name {

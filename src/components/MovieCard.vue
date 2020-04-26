@@ -1,13 +1,6 @@
 <template>
-  <Layout>
-    <Header />
-    <div class="container">
-      <main id="main">
-        <section id="now" class="movieCards">
-          <h2 class="section__title">À l'affiche</h2>
-          <div class="movieCards__list">
-            <MovieCard />
-            <article
+  <div>
+    <article
       id="movieCard"
       class="movieCard"
       v-for="edge in $static.allMovie.edges"
@@ -46,97 +39,16 @@
         </div>
       </div>
     </article>
-          </div>
-        </section>
-        <section class="soon">
-          <h2 class="sectionTitle">Prochainement</h2>
-        </section>
-      </main>
-      <!-- End of Main -->
-
-      <!-- Aside -->
-      <aside id="aside">
-        <Sidebar />
-      </aside>
-    </div>
-  </Layout>
+  </div>
 </template>
-<static-query>
-  {
-    allMovie{
-    edges{
-      node{
-        id
-        path
-        title
-        director
-        actors
-        poster
-        trailer
-        excerpt
-        genre
-        date(format: "Do MMMM, YYYY")
-        duration
-        public
-      }
-    }
-  }
-}
-</static-query>
 
 <script>
-import Header from "@/components/Header.vue";
-import Sidebar from "@/components/Sidebar.vue";
-import MovieCard from "@/components/MovieCard.vue";
 export default {
-  metaInfo: {
-    title: "LeKino",
-    meta: [
-      { charset: "utf-8" },
-      { name: "description", content: "Un cinéma à taille humaine" },
-      { name: "keywords", content: "Films, festivals, rencontres" }
-    ]
-  },
-  components: {
-    Header,
-    Sidebar,
-    MovieCard
-  }
+  name: "MovieCard"
 };
 </script>
 
-<style lang="scss">
-.home-links a {
-  margin-right: 1em;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-#main {
-  width: 100%;
-  padding: 1rem;
-}
-
-.movieCards__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  grid-gap: 1.5em;
-}
-
-#aside {
-  background-color: blue;
-  width: 33%;
-  max-width: 400px;
-  min-width: 200px;
-  padding: 1rem;
-  display: none;
-}
-
-// movieCard
-
+<style lang="scss" scoped>
 .movieCard {
   max-width: 15em;
   min-height: fit-content;

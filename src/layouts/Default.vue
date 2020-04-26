@@ -47,15 +47,20 @@ export default {
 };
 </script>
 
-
 <style>
+p {
+  color: #4b4453;
+}
+
 body {
-  background-color: #1a202c;
+  background-color: #845ec2;
   margin: 0;
   padding: 0;
   line-height: 1.5;
 }
-.layout {
+
+#app {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -67,17 +72,12 @@ body {
   width: 100%;
   height: 100vh;
   padding: 20px;
-  background-color: #fff;
+  background-color: #845ec2;
   transition: 1s transform cubic-bezier(0, 0.12, 0.14, 1);
 }
+
 .open {
   transform: translateX(-50%);
-}
-
-@media (min-device-width: 648px) {
-  .open {
-    transform: translateX(-33%);
-  }
 }
 
 #burger {

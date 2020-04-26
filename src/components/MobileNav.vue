@@ -32,8 +32,12 @@ export default {
   align-items: center;
   position: absolute;
   top: 1.75em;
-  right: 4em;
+  right: 2em;
   list-style-type: none;
+
+  @media (min-device-width: 648px) {
+    right: 4em;
+  }
 
   &__item {
     color: #fff;
