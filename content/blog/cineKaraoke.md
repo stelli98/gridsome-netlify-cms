@@ -1,14 +1,13 @@
 ---
-title: Watchmen
-excerpt: "Soirée Watchmen. Les 3 premier épisodes de la saison 1. Swag gentrify typewriter locavore lumbersexual. Marfa mumblecore tilde squid. Leggings tote bag franzen distillery freegan schlitz selfies enamel pin poutine."
-cover_image: "https://media.senscritique.com/media/000018880337/source_big/Watchmen.jpg"
-banner: "https://www.hbo.com/content/dam/hbodata/series/watchmen/key-art/watchmen-s01-ka-1920.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg"
+title: Ciné-Karaoké
+excerpt: "Venez chanter et danser aux sons et images de vos films préférés"
+cover_image: "/uploads/cine_karaoke.jpg"
 author: "Lenasurlenet"
 date: "2020-02-15"
-tags: ["Série", "Event"]
+tags: ["Event"]
 ---
 
-# Watchmen: 3 épisodes sur grand écran
+## Soirée Ciné-karaoké post confinement!
 
 Set in an alternate history where masked vigilantes are treated as outlaws, Watchmen embraces the nostalgia of the original groundbreaking graphic novel of the same name while attempting to break new ground of its own.
 

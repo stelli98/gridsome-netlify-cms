@@ -6,19 +6,29 @@
       v-for="edge in $static.allPost.edges"
       :key="edge.node.id"
     >
-      <g-image
-        class="coverImage postCard-left"
-        alt="coverImage"
+      <div class="imgContainer">
+        <g-image
+        class="postCard__coverImage"
+        alt="edge.node.title"
         :src="edge.node.cover_image"
-        style="max-width: 25%"
       />
-      <div class="postCard-right">
-        <h2 class="title">
-          {{ edge.node.title }}
-        </h2>
-        <p class="excerpt">{{ edge.node.excerpt }}</p>
-
-        <g-link :to="edge.node.path">Lire</g-link>
+      </div>
+      <div class="postCard__details">
+        <h3 class="postCard__title">{{ edge.node.title }}</h3>
+        <g-link
+          v-for="tag in edge.node.tags"
+          :to="tag.path"
+          :key="tag.id"
+          class="postCard__tag"
+          >{{ tag.id }}</g-link
+        >
+        <p class="postCard__description">{{ edge.node.excerpt }}</p>
+        <div class="postCard__footer">
+          <p class="postCard__footer-item postCard__author">Par {{ edge.node.author }}</p>
+          <p class="postCard__footer-item postCard__read"> - {{ edge.node.timeToRead }}mn </p>
+        </div>
+        <button class="btn btn__more"><g-link :to="edge.node.path">Lire</g-link></button>
+        
       </div>
     </article>
   </layout>
@@ -36,6 +46,11 @@ query
         cover_image
         date(format: "Do MMMM, YYYY")
         timeToRead
+        tags {
+          id
+          path
+
+        }
         path
       }
     }
@@ -46,19 +61,63 @@ query
 export default {};
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .postCard {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 0.1875em 1.5rem;
+  border-radius: 0.375em;
+  overflow: hidden;
+  margin: 1em 0 1.5em;
+
+  &__title {
+    margin-bottom: 0.75em;
+  }
+
+  &__tag {
+    background-color: rgb(207, 205, 205);
+    border-radius: 10px;
+    font-size: 0.75em;
+    padding: 0.5rem;
+    margin: 0 0.25em;
+  }
+}
+
+.postCard__coverImage {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.postCard__description {
+  margin: 1em 0;
+}
+
+.postCard__details {
+  padding: 0 1.5em 1em;
+}
+
+.postCard__footer {
+  display: flex;
   align-items: center;
-  padding: 0em 1em;
+  margin: 1em 0;
+
+  &-item {
+    margin-left: 1em;
+  }
 }
-.postCard-right {
-  padding: 1em 1.5em;
-}
-.pager {
-  letter-spacing: 0.25rem;
-  padding: 2.5em 1.25em;
+
+.btn {
+  font-weight: 500;
+  padding: 0.4em 0.6em;
+  border-radius: 5px;
+  width: 6em;
+  padding: 0.5em;
+  margin: 0 0.5em;
+
+  &__more {
+    background-color: coral;
+  }
 }
 </style>
-© 2020 GitHub, Inc.

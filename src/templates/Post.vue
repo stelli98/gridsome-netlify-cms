@@ -9,6 +9,14 @@
         Publié le {{ $page.post.date }} - {{ $page.post.timeToRead }}mn de
         lecture
       </p>
+      <g-link
+          style="padding-right: 0.25rem"
+          v-for="tag in edge.node.tags"
+          :to="tag.path"
+          :key="tag.id"
+          class="tags"
+          >#{{ tag.id }}></g-link
+        >
 
       <p class="content" v-html="$page.post.content" />
     </article>
@@ -23,7 +31,11 @@ query ($path :String!) {
     banner
     date(format: "Do MMMM, YYYY")
     timeToRead
-    
+    tags {
+      id
+      path
+
+    }
     content
   }
 }

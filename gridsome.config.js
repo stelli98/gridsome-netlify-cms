@@ -19,6 +19,14 @@ module.exports = {
       options: {
         typeName: "Post",
         path: "./content/blog/**/*.md",
+        refs: {
+          // Reference to existing authors by id.
+          // Create a Tag content type and its nodes automatically.
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
       },
     },
     {
@@ -41,7 +49,9 @@ module.exports = {
   ],
   templates: {
     Post: "/blog/:year/:month/:day/:title",
-    Movie: "/movies/:title"
+    Movie: "/movies/:title",
+    Tag: '/tags/:id'
+
   },
   chainWebpack(config) {
     // Load variables for all vue-files

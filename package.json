@@ -12,6 +12,7 @@
     "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome": "^0.7.13",
     "gridsome-plugin-netlify-cms": "^1.0.9",
+    "moment": "^2.24.0",
     "netlify-cms": "^2.10.47"
   },
   "devDependencies": {

@@ -1,17 +1,14 @@
 ---
 title: Parasite
-excerpt: "Toute la famille de Ki-taek (Song Kang-ho) est au chômage. Elle s’intéresse particulièrement au train de vie de la richissime famille Park."
+excerpt: "Entretien avec Bong Joon-Ho. Swag gentrify typewriter locavore lumbersexual. Marfa mumblecore tilde squid. Leggings tote bag franzen distillery freegan schlitz selfies enamel pin poutine."
 cover_image: "https://media.senscritique.com/media/000018573383/source_big/Parasite.jpg"
 banner: "https://images.squarespace-cdn.com/content/v1/5a864a549f8dce70ed07e19a/1583164829446-YPESVO44VM4WNDTW8QS7/ke17ZwdGBToddI8pDm48kBSYNBstbqYDCWsS-T2FAtIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnDw5KyJfdMM0tNpCUFKp5ghNchi-w2V9BXB90G7-oCAyaByF2jaum23CXMfE8TQsCA/Parasite_page+banner.jpg"
-
-director: Maximilien
-actors: Lily, Paul, Titi
-genre: Comédie dramatique
-public: -12 ans
-releaseDate: 2020-02-12
+author: "Maximilien"
+date: "2019-06-03"
+tags: ["Film", "Review", "Event"]
 ---
 
-## Presentation
+## Entretien avec Bong Joon-Ho
 
 Swag gentrify typewriter locavore lumbersexual. Marfa mumblecore tilde squid. Leggings tote bag franzen distillery freegan schlitz selfies enamel pin poutine.
 
