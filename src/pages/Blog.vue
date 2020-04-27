@@ -23,6 +23,7 @@
           >{{ tag.id }}</g-link
         >
         <p class="postCard__description">{{ edge.node.excerpt }}</p>
+        <p class="postCard__author">Publié le {{ edge.node.date }}</p>
         <div class="postCard__footer">
           <p class="postCard__footer-item postCard__author">Par {{ edge.node.author }}</p>
           <p class="postCard__footer-item postCard__read"> - {{ edge.node.timeToRead }}mn </p>
@@ -58,7 +59,8 @@ query
 }
 </static-query>
 <script>
-export default {};
+export default {
+
 </script>
 
 <style lang="scss" scoped>

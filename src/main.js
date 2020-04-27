@@ -3,7 +3,7 @@
 
 import DefaultLayout from "~/layouts/Default.vue";
 import '@/assets/sass/main.scss';
-
+import moment from 'moment';
 
 
 export default function (Vue, {
@@ -46,6 +46,7 @@ export default function (Vue, {
       id: 'snipcart',
       'data-api-key': 'MjRhZjNmMzEtOWRmYi00YWEyLTk5OGYtZjgzZDE4YzUxYjIzNjM3MTYzMTMxNjMzNTQ0OTk4',
     },
-    Vue.component("Layout", DefaultLayout)
-  )
+    Vue.component("Layout", DefaultLayout),
+    Vue.prototype.$moment = moment
+  );
 }
