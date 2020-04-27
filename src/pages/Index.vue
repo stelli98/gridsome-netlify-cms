@@ -8,44 +8,44 @@
           <div class="movieCards__list">
             <MovieCard />
             <article
-      id="movieCard"
-      class="movieCard"
-      v-for="edge in $static.allMovie.edges"
-      :key="edge.node.id"
-    >
-      <g-image
-      class="poster"
-      :src="edge.node.poster"
-      style="width: 100%"
-      />
-      <div class="movieCard__content">
-        <ul class="movieCard__details">
-          <li class="movieCard__details-item">{{ edge.node.genre }}</li>
-          <li class="movieCard__details-item">
-            {{ edge.node.duration }}
-          </li>
-          <li class="movieCard__details-item">
-            {{ edge.node.public }}
-          </li>
-        </ul>
-        <div class="movieCard__cta">
-          <button class="btn btn-more">
-            <g-link :to="edge.node.path"><i class="fas fa-plus-circle"></i></g-link>
-          </button>
-          <button
-            class=" snipcart-add-item btn btn-buy"
-            :data-item-id="edge.node.id"
-            :data-item-price="7.5"
-            data-item-url="/"
-            :data-item-description="edge.node.excerpt"
-            :data-item-image="edge.node.poster"
-            :data-item-name="edge.node.title"
-          >
-            Résa
-          </button>
-        </div>
-      </div>
-    </article>
+              id="movieCard"
+              class="movieCard"
+              v-for="edge in $static.allMovie.edges"
+              :key="edge.node.id"
+            >
+              <g-image
+              class="poster"
+              :src="edge.node.poster"
+              style="width: 100%"
+              />
+              <div class="movieCard__content">
+                <ul class="movieCard__details">
+                  <li class="movieCard__details-item">{{ edge.node.genre }}</li>
+                  <li class="movieCard__details-item">
+                    {{ edge.node.duration }}
+                  </li>
+                  <li class="movieCard__details-item">
+                    {{ edge.node.public }}
+                  </li>
+                </ul>
+                <div class="movieCard__cta">
+                  <button class="btn btn-more">
+                    <g-link :to="edge.node.path"><i class="fas fa-plus-circle"></i></g-link>
+                  </button>
+                  <button
+                    class=" snipcart-add-item btn btn-buy"
+                    :data-item-id="edge.node.id"
+                    :data-item-price="7.5"
+                    data-item-url="/"
+                    :data-item-description="edge.node.excerpt"
+                    :data-item-image="edge.node.poster"
+                    :data-item-name="edge.node.title"
+                  >
+                    Résa
+                  </button>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
         <section class="soon">

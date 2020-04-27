@@ -27,7 +27,7 @@
         <h4>Sélectionnez une séance</h4>
       <div class="timeCards">
         <div class="timeCard">
-          <p class="day">12h15</p>
+          <p class="day">{{edge.node.time}}</p>
         </div>
         <div class="timeCard">
           <p class="day">17h15</p>
